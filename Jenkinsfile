@@ -3,17 +3,12 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo "build" 
+                sh 'npm pack' 
             }
         }
         stage('Test') { 
             steps {
                 echo "test" 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "deploy" 
             }
         }
     }
