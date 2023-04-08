@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo "build" 
+                echo "npm pack" 
             }
         }
         stage('Test') { 
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                echo "deploy" 
+                echo "npm start" 
             }
         }
     }
