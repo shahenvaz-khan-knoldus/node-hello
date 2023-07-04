@@ -20,4 +20,5 @@ stages:
     pool:
       Default
     steps:
-    - script: node index.js
+    - script: docker build -t nodeapp:1.0 .
+    - script: docker run -dp 3000:3000 nodeapp:1.0
