@@ -21,4 +21,6 @@ stages:
       Default
     steps:
     - script: docker build -t nodeapp:1.0 .
-    - script: docker run -dp 3000:3000 nodeapp:1.0
+      displayName: building docker image
+    - script: docker run -dp 3000:3000 -p 3001:3001 nodeapp:1.0
+      displayName: running application on port 3000 and 3001
