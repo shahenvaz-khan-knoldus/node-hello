@@ -20,6 +20,7 @@ stages:
     pool:
       Default
     steps:
+    - script: npm version minor
     - script: npm publish
     - script: docker build -t nodeapp:1.0 .
       displayName: building docker image
