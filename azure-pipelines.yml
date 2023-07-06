@@ -25,5 +25,4 @@ stages:
         action: 'deploy'
         connectionType: 'kubernetesServiceConnection'
         kubernetesServiceConnection: 'minikube-kubernetes'
-        namespace: 'default'
         manifests: 'pod.yml'
