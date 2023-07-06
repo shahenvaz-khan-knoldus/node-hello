@@ -20,4 +20,10 @@ stages:
     pool:
       Default
     steps:
-    - script: kubectl apply -f pod.yml
+    - task: KubernetesManifest@1
+      inputs:
+        action: 'deploy'
+        connectionType: 'kubernetesServiceConnection'
+        kubernetesServiceConnection: 'minikube-kubernetes'
+        namespace: 'default'
+        manifests: 'pod.yml'
