@@ -20,9 +20,5 @@ stages:
     pool:
       Default
     steps:
-    - task: KubernetesManifest@1
-      inputs:
-        action: 'deploy'
-        connectionType: 'kubernetesServiceConnection'
-        kubernetesServiceConnection: 'minikube-kubernetes'
-        manifests: 'pod.yml'
+    - script: docker build -t shahenvaz7/nodeapp:'$(Build.BuildId)' .
+    - script: docker push shahenvaz7/nodeapp:'$(Build.BuildId)'
